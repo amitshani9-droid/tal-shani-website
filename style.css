@@ -1,0 +1,833 @@
+/*
+ * Stylesheet for Tal Shani – Corporate Event Planning Landing Page
+ * Redesigned for a Premium Light Palette (Pink/Purple Brand)
+ */
+
+:root {
+    --navy: #FDFDFD;
+    /* Main Body Background */
+    --white: #ffffff;
+    --brand-pink: #d187b8;
+    --brand-pink-light: #F9F5F8;
+    /* Alternating Section Background */
+    --brand-dark: #1A1C23;
+    /* Deep Navy / Charcoal */
+    --brand-navy: #0B1020;
+    /* Deep Navy for headings */
+    --text-main: #1A1C23;
+    --text-muted: #4A4A4A;
+    --pink-brand: var(--brand-pink);
+    --pink-light: var(--brand-pink-light);
+    --light-overlay: rgba(0, 0, 0, 0.55);
+    /* Hero Contrast darkened for razor-sharp text */
+    --shadow-luxury: 0 10px 30px rgba(0, 0, 0, 0.04), 0 20px 60px rgba(209, 135, 184, 0.12);
+    /* Multi-layered Premium Depth */
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    background-color: var(--navy);
+    color: var(--text-muted);
+    line-height: 1.8;
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 8rem 0;
+    background-color: var(--navy);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--brand-pink-light);
+    /* Alternating backgrounds for magazinic look */
+}
+
+h1 {
+    font-weight: 900;
+}
+
+h2 {
+    color: var(--brand-navy);
+    font-weight: 900;
+    margin-bottom: 3.5rem;
+    line-height: 1.3;
+}
+
+h3 {
+    color: var(--brand-dark);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+p,
+li {
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* Scroll Reveal Animations - Modern Blurred Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+    /* Initial blur for premium feel */
+    transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+        filter 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    /* Clear blur on reveal */
+}
+
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero section - מותאם לרקע בהיר */
+.hero {
+    position: relative;
+    height: calc(100vh - 90px);
+    /* מוריד את גובה ה-Header */
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-overlay);
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    color: #ffffff;
+    /* Force white on hero */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #ffffff;
+    /* Force white on hero */
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* כפתורים בצבעי המותג */
+.btn {
+    border-radius: 999px;
+    font-weight: 800;
+    padding: 0.75rem 1.5rem;
+    display: inline-block;
+    transition: transform .2s ease, background-color .25s ease;
+}
+
+.btn-primary {
+    background-color: var(--brand-pink);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(209, 135, 184, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #b56b9a;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid var(--brand-pink);
+    color: var(--brand-pink);
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    background-color: var(--pink-brand);
+    color: #ffffff;
+}
+
+/* לוגואים - התאמה לרקע לבן */
+.logos {
+    background: #ffffff;
+    padding: 4rem 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logos ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logos img {
+    max-height: 32px;
+    /* Smaller logos */
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: all 0.4s ease;
+}
+
+.logos img:hover {
+    filter: none;
+    opacity: 1;
+}
+
+/* כרטיסים ועיצוב כללי - Premium Depth & Style */
+.process-step,
+.value-card,
+.case-card,
+.faq-item,
+.dual-cta-card,
+.stat {
+    background: #ffffff !important;
+    /* White background as requested */
+    border: 1px solid rgba(209, 135, 184, 0.1);
+    border-top: 4px solid var(--brand-pink);
+    /* 4px top accent border */
+    padding: 3.5rem 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    color: var(--brand-dark);
+    box-shadow: var(--shadow-luxury);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.process-step:hover,
+.value-card:hover,
+.case-card:hover,
+.dual-cta-card:hover {
+    transform: translateY(-10px);
+    /* Professional 10px lift */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05), 0 35px 80px rgba(209, 135, 184, 0.15);
+}
+
+.process-step-number,
+.value-icon,
+.stat-number,
+.stat-value,
+.faq-item h3 {
+    color: var(--brand-pink);
+    font-weight: 900;
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    width: 80px;
+    height: 80px;
+    background: var(--brand-pink-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(209, 135, 184, 0.2);
+}
+
+/* גלריה וסיפורי הצלחה - Symmetrical Grid & Interaction */
+.gallery-grid img,
+.case-card img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Service Blocks - Big Cubes */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card-large {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    color: white;
+    box-shadow: var(--shadow-luxury);
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem;
+    text-align: right;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.service-card-large:hover {
+    transform: translateY(-10px);
+}
+
+.service-card-large::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+}
+
+.service-card-large h3,
+.service-card-large p,
+.service-card-large .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.service-card-large h3 {
+    margin-bottom: 0.5rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.service-card-large p {
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    max-width: 90%;
+}
+
+.case-card {
+    overflow: hidden;
+}
+
+.gallery-grid img {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* טופס יצירת קשר - Floating White Card */
+.contact-form {
+    background: #ffffff;
+    border: 1px solid rgba(209, 135, 184, 0.1);
+    padding: 4rem 3.5rem;
+    max-width: 800px;
+    border-radius: 24px;
+    /* 24px border-radius as requested */
+    box-shadow: var(--shadow-luxury);
+    margin: 2rem auto;
+}
+
+.contact-form label {
+    color: #0B1020;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    background: #ffffff;
+    color: #0B1020;
+    border: 1px solid #eee;
+    /* Subtle light border */
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: var(--brand-pink) !important;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(209, 135, 184, 0.1);
+    /* Soft pink glow */
+}
+
+.contact-form button {
+    background-color: var(--brand-pink);
+    /* Brand pink button */
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #b56b9a;
+    transform: translateY(-2px);
+}
+
+/* פוטר */
+footer {
+    background-color: #f9f9f9;
+    color: #666;
+    border-top: 1px solid #eee;
+}
+
+/* וואטסאפ צף - Exact Fixed Sizing */
+.whatsapp-float {
+    position: fixed !important;
+    bottom: 25px !important;
+    /* Anchored at 25px */
+    right: 25px !important;
+    /* Anchored at 25px */
+    width: 60px !important;
+    /* Exactly 60px */
+    height: 60px !important;
+    /* Exactly 60px */
+    padding: 12px !important;
+    /* 12px padding */
+    background: #25D366;
+    color: #fff;
+    border-radius: 50% !important;
+    /* Circular */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-float svg {
+    width: 100% !important;
+    height: 100% !important;
+    fill: currentColor;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* התאמות מובייל */
+@media (max-width: 768px) {
+    section {
+        padding: 4rem 0;
+        /* Balanced spacing for mobile */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        /* Better fit on small screens */
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Force grids to single column */
+    .dual-cta-grid,
+    .stats-grid,
+    .process-steps,
+    .values-cards,
+    .gallery-grid,
+    .case-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+
+    /* Image Stretching Fixes */
+    .case-grid img,
+    .gallery-grid img,
+    .about-img img {
+        width: 100% !important;
+        object-fit: cover !important;
+        height: auto;
+    }
+
+    /* About Photo Optimization */
+    .about-img {
+        max-width: 250px !important;
+        margin: 0 auto 2rem !important;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .about-img img {
+        border-radius: 20px;
+    }
+
+    .about-content {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    /* Card Spacing Fixes */
+    .process-step,
+    .value-card,
+    .case-card,
+    .stat {
+        padding: 1.5rem !important;
+    }
+
+    /* Logo Visibility Fix */
+    .logo-img {
+        min-height: 50px !important;
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+        /* Make it pop on mobile */
+    }
+
+    .nav-cta {
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+    }
+}
+
+/* עיצוב שורת הלוגו והניווט */
+.nav-header {
+    background-color: #ffffff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(209, 135, 184, 0.1);
+    /* Branded thin bottom border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* ניווט חכם - דסקטופ */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    font-weight: 700;
+    color: var(--brand-navy);
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--brand-pink);
+}
+
+.mobile-only-btn {
+    display: none;
+}
+
+/* המבורגר - הגדרות בסיס */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--brand-pink);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .nav-cta {
+        display: none;
+    }
+
+    /* מסתיר את הכפתור הרגיל */
+    .hamburger {
+        display: flex;
+    }
+
+    /* מציג המבורגר */
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* מוחבא מחוץ למסך */
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        z-index: 2000;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    /* פתיחת תפריט */
+
+    .nav-menu a {
+        font-size: 1.5rem;
+        margin: 15px 0;
+    }
+
+    .mobile-only-btn {
+        display: inline-block;
+        margin-top: 20px;
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    /* יוצר מרחק בין הלוגו לכפתור */
+    align-items: center;
+    flex-direction: row-reverse;
+    /* דוחף את הלוגו לשמאל בגלל ה-RTL */
+    padding: 10px 20px;
+}
+
+.nav-cta {
+    position: static;
+    /* מבטל הצמדה ישנה */
+}
+
+.logo-img {
+    height: 105px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.03);
+}
+
+/* --- תיקוני רספונסיביות למובייל --- */
+
+@media (max-width: 768px) {
+
+    /* 1. מניעת מתיחה של תמונות וסידור גריד */
+    .gallery-grid,
+    .case-grid,
+    .process-steps,
+    .values-cards,
+    .stats-grid,
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        /* מעבר לעמודה אחת */
+        gap: 20px !important;
+    }
+
+    .gallery-grid img,
+    .case-card img {
+        width: 100% !important;
+        height: 250px !important;
+        /* גובה קבוע למניעת מתיחה */
+        object-fit: cover !important;
+        /* שומר על פרופורציות התמונה */
+    }
+
+    /* 2. הקטנת התמונה של טל (אמא) ומרכוז */
+    .about-content {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .about-img {
+        max-width: 300px !important;
+        /* הגבלת גודל התמונה */
+        margin: 0 auto 2rem !important;
+    }
+
+    .about-img img {
+        border-radius: 20px !important;
+        box-shadow: var(--shadow-luxury) !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* 3. וידוא נראות הלוגו ב-Header */
+    .nav-container {
+        padding: 10px 20px !important;
+        /* מרחב נשימה מהקצוות */
+    }
+
+    .logo-img {
+        height: 90px !important;
+        /* הגדלה במיוחד למובייל כדי שיהיה קריא */
+        min-height: 50px !important;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        /* הבלטה על רקע לבן */
+    }
+
+    /* 4. תיקון כרטיסים וריווחים */
+    section {
+        padding: 4rem 0 !important;
+        /* צמצום גובה הסקשנים למניעת גלילה אינסופית */
+    }
+
+    .process-step,
+    .value-card,
+    .case-card {
+        padding: 2.5rem 1.5rem !important;
+        /* יותר מקום לטקסט */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem !important;
+        /* התאמת כותרת למסך קטן */
+    }
+
+    .hero p {
+        font-size: 1.1rem !important;
+    }
+
+    /* 5. תיקון טופס יצירת קשר */
+    .contact-form {
+        padding: 2.5rem 1.5rem !important;
+        margin: 1.5rem !important;
+    }
+
+    /* 6. התאמת כפתורים למגע - רוחב מלא/מרכוז */
+    .btn {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* תיקון ספציפי לאייקון הוואטסאפ (למקרה שנדרס) */
+.whatsapp-float {
+    width: 60px !important;
+    height: 60px !important;
+    z-index: 9999 !important;
+}
+
+/* --- אנימציות פרימיום --- */
+
+/* כניסת לוגו חלקה */
+@keyframes logoEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateX(-20px);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+        filter: blur(0);
+    }
+}
+
+.logo-img {
+    animation: logoEntrance 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* אפקט גלריה - זום פנימי */
+.gallery-grid img,
+.case-card img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.gallery-grid img:hover,
+.case-card:hover img {
+    transform: scale(1.05) !important;
+}
+
+/* דגש לכפתור מרכזי - פעימה עדינה */
+@keyframes buttonPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(209, 135, 184, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(209, 135, 184, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(209, 135, 184, 0);
+    }
+}
+
+.hero .btn-primary {
+    animation: buttonPulse 2.5s infinite;
+}
